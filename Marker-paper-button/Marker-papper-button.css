@@ -2,36 +2,36 @@ body{
     background-color: #f2f2f2;
   }
   
-  .box__title{    
-      text-align:center;
-  }
-  
-  @keyframes bg-grad { 
+@keyframes bg-grad {
     100% {
-      background-position: 50px 0;
+      background-position: 60px 0;
     }
-  }
+}
+
+@keyframes title-grad {
+    100% {
+      background-position: 10px 0;
+    }
+}
   
-  .effect3
-  {
+.paper{
+    display:flex;
+    align-items:center;
     background-color: #fff;
     width:350px;
     height: 100px;
     position: relative;
     margin:auto;
-    /* border: 1px solid; */
-    /* transition: 2s linear;   */
-  }
+}
   
-  .effect3:hover{
+.paper:hover{
   background-position:0 0;
   background: rgb(255,255,255);
   background: linear-gradient(90deg, rgba(255,255,255,1) 2%, rgba(242,242,242,1) 30%, rgba(255,255,255,1) 70%);
   animation:bg-grad 0.5s both ;
-  }
+}
   
-  .effect3:before
-  {
+.shadow:before{
     z-index: -1;
     position: absolute;
     content: "";
@@ -39,21 +39,34 @@ body{
     left: 10px;
     width: 50%;
     top: 80%;
-    max-width:300px;  
+    max-width:300px;
     background: #777;
     -webkit-box-shadow: 0 15px 10px #777;
     -moz-box-shadow: 0 15px 10px #777;
     box-shadow: 0 15px 10px #777;
     transition: 0.2s linear;
     opacity:0;
-  }
+}
   
-  .effect3:hover:before
-  {
+.shadow:hover:before{
     -webkit-transform: rotate(-3deg);
     -moz-transform: rotate(-3deg);
     -o-transform: rotate(-3deg);
     -ms-transform: rotate(-3deg);
     transform: rotate(-3deg);
     opacity:1;  
-  }
+}
+
+.box__title{
+    text-align:center;
+    margin:0 auto;
+    font-size:35px;
+    color: #FE9401;
+}
+
+.paper:hover .box__title{
+    animation: title-grad 0.5s both;
+    background: linear-gradient(90deg, rgba(254,148,1,1) 0%, rgba(226,159,27,1) 30%, rgba(254,148,1,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
