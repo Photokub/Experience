@@ -1,0 +1,59 @@
+body{
+    background-color: #f2f2f2;
+  }
+  
+  .box__title{    
+      text-align:center;
+  }
+  
+  @keyframes bg-grad { 
+    100% {
+      background-position: 50px 0;
+    }
+  }
+  
+  .effect3
+  {
+    background-color: #fff;
+    width:350px;
+    height: 100px;
+    position: relative;
+    margin:auto;
+    /* border: 1px solid; */
+    /* transition: 2s linear;   */
+  }
+  
+  .effect3:hover{
+  background-position:0 0;
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 2%, rgba(242,242,242,1) 30%, rgba(255,255,255,1) 70%);
+  animation:bg-grad 0.5s both ;
+  }
+  
+  .effect3:before
+  {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    top: 80%;
+    max-width:300px;  
+    background: #777;
+    -webkit-box-shadow: 0 15px 10px #777;
+    -moz-box-shadow: 0 15px 10px #777;
+    box-shadow: 0 15px 10px #777;
+    transition: 0.2s linear;
+    opacity:0;
+  }
+  
+  .effect3:hover:before
+  {
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+    opacity:1;  
+  }
